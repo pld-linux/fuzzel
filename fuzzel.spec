@@ -1,11 +1,11 @@
 Summary:	Application launcher for wlroots based Wayland compositors
 Name:		fuzzel
-Version:	1.7.0
+Version:	1.8.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://codeberg.org/dnkl/fuzzel/archive/%{version}.tar.gz
-# Source0-md5:	85614ba43818d3c9ea960b2785ee229e
+# Source0-md5:	4dd1920586e8a1a441d2b0094c333ca5
 URL:		https://codeberg.org/dnkl/fuzzel/
 BuildRequires:	cairo-devel
 BuildRequires:	fcft-devel < 4.0.0
@@ -13,7 +13,7 @@ BuildRequires:	fcft-devel >= 3.0.0
 BuildRequires:	fontconfig-devel
 BuildRequires:	libpng-devel
 BuildRequires:	librsvg-devel
-BuildRequires:	meson >= 0.53.0
+BuildRequires:	meson >= 0.58.0
 BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
@@ -61,8 +61,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG.md README.md
+%dir %{_sysconfdir}/xdg/fuzzel
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/fuzzel/fuzzel.ini
 %attr(755,root,root) %{_bindir}/fuzzel
 %{_mandir}/man1/fuzzel.1*
+%{_mandir}/man5/fuzzel.ini.5*
 
 %files -n zsh-completion-fuzzel
 %defattr(644,root,root,755)
