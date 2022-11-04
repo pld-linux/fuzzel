@@ -1,11 +1,11 @@
 Summary:	Application launcher for wlroots based Wayland compositors
 Name:		fuzzel
-Version:	1.8.1
+Version:	1.8.2
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://codeberg.org/dnkl/fuzzel/archive/%{version}.tar.gz
-# Source0-md5:	0a0ec931ba7de70bd7d3f84505ea9dc2
+# Source0-md5:	992338c3a15b3aa103b1577516a4d454
 URL:		https://codeberg.org/dnkl/fuzzel/
 BuildRequires:	cairo-devel
 BuildRequires:	fcft-devel < 4.0.0
@@ -31,6 +31,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Fuzzel is a Wayland-native application launcher, similar to rofi's
 drun mode.
+
+%package -n fish-completion-fuzzel
+Summary:	fish-completion for fuzzel
+Group:		Applications/Shells
+Requires:	%{name} = %{version}-%{release}
+Requires:	fish
+BuildArch:	noarch
+
+%description -n fish-completion-fuzzel
+fish-completion for fuzzel.
 
 %package -n zsh-completion-fuzzel
 Summary:	ZSH completion for fuzzel command line
@@ -66,6 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/fuzzel
 %{_mandir}/man1/fuzzel.1*
 %{_mandir}/man5/fuzzel.ini.5*
+
+%files -n fish-completion-fuzzel
+%defattr(644,root,root,755)
+%{_datadir}/fish/vendor_completions.d/fuzzel.fish
 
 %files -n zsh-completion-fuzzel
 %defattr(644,root,root,755)
