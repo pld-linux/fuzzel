@@ -1,11 +1,11 @@
 Summary:	Application launcher for wlroots based Wayland compositors
 Name:		fuzzel
-Version:	1.9.2
+Version:	1.10.2
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://codeberg.org/dnkl/fuzzel/archive/%{version}.tar.gz
-# Source0-md5:	7379867ae8214a73f39034cebb07c73b
+# Source0-md5:	1fd8fb416343377d2bbea3c2caaa55ea
 URL:		https://codeberg.org/dnkl/fuzzel/
 BuildRequires:	cairo-devel
 BuildRequires:	fcft-devel < 4.0.0
@@ -22,7 +22,7 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	scdoc
 BuildRequires:	tllist-devel >= 1.0.1
 BuildRequires:	wayland-devel
-BuildRequires:	wayland-protocols
+BuildRequires:	wayland-protocols >= 1.32
 BuildRequires:	xorg-lib-libxkbcommon-devel
 Requires:	fcft < 4.0.0
 Requires:	fcft >= 3.0.0
