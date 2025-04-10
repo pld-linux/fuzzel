@@ -18,7 +18,7 @@ BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	scdoc
 BuildRequires:	tllist-devel >= 1.0.1
 BuildRequires:	wayland-devel
@@ -56,14 +56,14 @@ ZSH completion for fuzzel command line.
 %setup -q -n %{name}
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
