@@ -1,11 +1,11 @@
 Summary:	Application launcher for wlroots based Wayland compositors
 Name:		fuzzel
-Version:	1.11.1
+Version:	1.12.0
 Release:	1
 License:	MIT
 Group:		Applications
-Source0:	https://codeberg.org/dnkl/fuzzel/archive/%{version}.tar.gz
-# Source0-md5:	6c4dc414dbebc6b8f914a8fc5aace9f0
+Source0:	https://codeberg.org/dnkl/fuzzel/releases/download/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	5ed277912bfacf0a0dc7f1bcce0bbfe8
 URL:		https://codeberg.org/dnkl/fuzzel/
 BuildRequires:	cairo-devel
 BuildRequires:	fcft-devel < 4.0.0
@@ -53,7 +53,7 @@ BuildArch:	noarch
 ZSH completion for fuzzel command line.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %meson
